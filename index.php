@@ -84,13 +84,13 @@ include('init.php'); ?>
         <div class="row">
             <?php 
                 $limit =  6;
-                $stmt = $db->prepare("SELECT * FROM items  WHERE `name` LIKE '%outfit%' ORDER BY id DESC LIMIT  6");
+                $stmt = $db->prepare("SELECT * FROM items  WHERE `name` LIKE '%outfit%' ORDER BY id DESC LIMIT 8");
                 $stmt->execute();
                 $allItems = $stmt->fetchAll();
                 foreach ($allItems as $item) {
                
             ?>
-                <div class="col-md-4 col-lg-4">
+                <div class="col-md-3 col-lg-3 col-sm-6">
                     <div class="product-item text-center">
                         <div class="p-item-img">
                             <img class="img-fluid" src="dashoborad/uploaded/images/<?php echo $item['item_image'];?>" alt="">
@@ -126,7 +126,7 @@ include('init.php'); ?>
                 foreach ($allItems as $item) {
                
             ?>
-                <div class="col-md-4 col-lg-4">
+                <div class="col-md-3 col-sm-8">
                     <div class="product-item text-center">
                         <div class="p-item-img">
                             <img class="img-fluid" src="dashoborad/uploaded/images/<?php echo $item['item_image'];?>" alt="">

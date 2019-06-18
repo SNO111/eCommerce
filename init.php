@@ -13,6 +13,10 @@ $js = 'layout/js/';
 
 include $func . 'functions.php';
 include $tpl . 'header.php';
+if(!isset($noNavbar)) {
+    include $tpl . 'navbar.php';
+}
+
 
 
 
