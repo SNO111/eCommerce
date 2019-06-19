@@ -1,50 +1,106 @@
 <?php 
+session_start();
 $pageTitle = 'Contact Us';
 include('init.php');
+
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+            $name       = $_POST['name'];
+            $email      = $_POST['email'];
+            $subject    = $_POST['subject'];
+            $msg        =  $_POST['message'];
+
+            $formErrors = array();
+            if(empty($name)) {
+                $formErrors[] = 'Please enter your name';
+            }
+            if(empty($email)) {
+                $formErrors[] = 'Please enter your email';
+            }
+            if(empty($subject)) {
+                $formErrors[] = 'Please enter a subject';
+            }
+            if(empty($msg)) {
+                $formErrors[] = 'Please leave us a Message';
+            }
+            foreach ($formErrors as $error) { ?>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8" style="margin: 0 auto;">
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <strong><?php echo $error;?></strong> 
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            <?php }
+            if (empty($formErrors)) {
+                $stmt = $db->prepare('INSERT INTO contact (name, email, subject, message, time) 
+                                        VALUES (:zname, :zemail, :zsubject, :zmsg, now())');
+                $row = $stmt->execute(array(
+                    'zname'     => $name,       
+                    'zemail'    => $email,      
+                    'zsubject'  => $subject,   
+                    'zmsg'      => $msg       
+                ));
+
+                // Echo success message
+                if ($row) { ?>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-8" style="margin: 0 auto;">
+                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <strong>Message sent successfully</strong> 
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php }
+            } else {
+               echo 'Something went wrong, please try again later!';
+            }
+            
+
+    } // endif 
 
 ?>
 <main>
     <div class="container">
-        <form id="contact-form" method="post" action="contact.php" role="form">
+        <form id="contact-form" method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>" role="form">
 
         <div class="messages"></div>
 
         <div class="controls">
 
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <div class="form-group">
-                        <label for="form_name">Firstname *</label>
-                        <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
-                        <div class="help-block with-errors"></div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="form_lastname">Lastname *</label>
-                        <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="Lastname is required.">
+                        <label for="form_name">Name *</label>
+                        <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your name *" required="required" data-error="Firstname is required.">
                         <div class="help-block with-errors"></div>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <div class="form-group">
                         <label for="form_email">Email *</label>
                         <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
                         <div class="help-block with-errors"></div>
                     </div>
                 </div>
-                <div class="col-md-6">
+            </div>
+            <div class="row">
+                <div class="col-md-12">
                     <div class="form-group">
-                        <label for="form_need">Please specify your need *</label>
-                        <select id="form_need" name="need" class="form-control" required="required" data-error="Please specify your need.">
-                            <option value=""></option>
-                            <option value="Request quotation">Request quotation</option>
-                            <option value="Request order status">Request order status</option>
-                            <option value="Request copy of an invoice">Request copy of an invoice</option>
-                            <option value="Other">Other</option>
-                        </select>
+                        <label for="form_subject">Subject *</label>
+                        <input id="form_subject" type="text" name="subject" class="form-control" placeholder="Please enter a subject *" required="required" data-error="Valid email is required.">
                         <div class="help-block with-errors"></div>
                     </div>
                 </div>
@@ -65,8 +121,7 @@ include('init.php');
             <div class="row">
                 <div class="col-md-12">
                     <p class="text-muted">
-                        <strong>*</strong> These fields are required. Contact form template by
-                        <a href="https://bootstrapious.com/p/how-to-build-a-working-bootstrap-contact-form" target="_blank">Bootstrapious</a>.</p>
+                        <strong>*</strong> These fields are required. 
                 </div>
             </div>
         </div>

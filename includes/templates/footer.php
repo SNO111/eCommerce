@@ -7,10 +7,9 @@
                     <div class="footer-info-single">
                         <h5>CUSTOMER INFORMATION</h5>
                         <ul class="list-unstyled">
-                            <li><a href="" title=""><i class="fa fa-angle-double-right"></i> About Us</a></li>
-                            <li><a href="" title=""><i class="fa fa-angle-double-right"></i> FAQ's</a></li>
-                            <li><a href="" title=""><i class="fa fa-angle-double-right"></i> Sell Your Items</a></li>
-                            <li><a href="" title=""><i class="fa fa-angle-double-right"></i> Contact Us</a></li>
+                            <li><a href="about.php" title=""><i class="fa fa-angle-double-right"></i> About Us</a></li>
+                            <li><a href="about.php#SellYourItems" title=""><i class="fa fa-angle-double-right"></i> Sell Your Items</a></li>
+                            <li><a href="contact.php" title=""><i class="fa fa-angle-double-right"></i> Contact Us</a></li>
                             <li><a href="" title=""><i class="fa fa-angle-double-right"></i> RSS</a></li>
                         </ul>
                     </div>
@@ -19,10 +18,10 @@
                     <div class="footer-info-single">
                         <h5>HELP CENTER</h5>
                         <ul class="list-unstyled">
-                            <li><a href="#" title=""><i class="fa fa-angle-double-right"></i> How to Pay</a></li>
-                            <li><a href="#" title=""><i class="fa fa-angle-double-right"></i> FAQ's</a></li>
+                            <li><a href="about.php#howToPay" title=""><i class="fa fa-angle-double-right"></i> How to Pay</a></li>
+                            <li><a href="about.php#faqs" title=""><i class="fa fa-angle-double-right"></i> FAQ's</a></li>
                             <li><a href="#" title=""><i class="fa fa-angle-double-right"></i> Sitemap</a></li>
-                            <li><a href="#" title=""><i class="fa fa-angle-double-right"></i> Delivery Info</a></li>
+                            <li><a href="about.php#deliveryinfo" title=""><i class="fa fa-angle-double-right"></i> Delivery Info</a></li>
                         </ul>
                     </div>
                 </div>
@@ -30,10 +29,10 @@
                     <div class="footer-info-single">
                         <h5 class="">SECURITY & PRIVACY</h5>
                         <ul class="list-unstyled">
-                            <li><a href="#" title=""><i class="fa fa-angle-double-right"></i> Terms Of Use</a></li>
-                            <li><a href="#" title=""><i class="fa fa-angle-double-right"></i> Privacy Policy</a></li>
-                            <li><a href="#" title=""><i class="fa fa-angle-double-right"></i> Return / Refund Policy</a></li>
-                            <li><a href="#" title=""><i class="fa fa-angle-double-right"></i> Store Locations</a></li>
+                            <li><a href="about.php#TermsOfUse" title=""><i class="fa fa-angle-double-right"></i> Terms Of Use</a></li>
+                            <li><a href="about.php#privacypolicy" title=""><i class="fa fa-angle-double-right"></i> Privacy Policy</a></li>
+                            <li><a href="about.php#ReturnRefundPolicy" title=""><i class="fa fa-angle-double-right"></i> Return / Refund Policy</a></li>
+                            <li><a href="about.php#StoreLocations" title=""><i class="fa fa-angle-double-right"></i> Store Locations</a></li>
                         </ul>
                     </div>
                 </div>

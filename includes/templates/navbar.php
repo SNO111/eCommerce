@@ -32,8 +32,7 @@
         </div>
         <!-- Collection of nav links, forms, and other content for toggling -->
         <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
-            <ul class="nav navbar-nav">
-                <li class="nav-item"><a href="#" class="nav-link">About</a></li>			
+            <ul class="nav navbar-nav">		
                 <li class="nav-item dropdown">
                     <a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#">Categories <b class="caret"></b></a>
                     <ul class="dropdown-menu">					
@@ -46,6 +45,7 @@
                     </ul>
                 </li>
                 <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="about.php" class="nav-link">About</a></li>	
             </ul>
             <form class="navbar-form form-inline">
                 <div class="input-group search-box">								
@@ -55,9 +55,19 @@
             </form>
             
             <?php if(isset($_SESSION['user'])) { ?>
-                <?php echo $_SESSION['user'] . ' -';?> 
-                    <a  href="profile.php?">Profile</a>
-                    <a href="logout.php">Logout</a>
+                    <ul class="nav navbar-nav navbar-right ml-auto">			
+                        <li class="nav-item">
+                            <a data-toggle="dropdown" class="btn dropdown-toggle get-started-btn mt-1 mb-1" href="#"><?php echo $_SESSION['user'];?> </a>
+                            <ul class="dropdown-menu form-wrapper dropdown-user">					
+                                <li>
+                                   <a  href="profile.php?">Profile</a>
+                                </li>
+                                <li>
+                                    <a href="logout.php">Logout</a>
+                                </li>
+                            </ul>
+                        </li>
+                </ul>
             <?php } else { ?>
             <ul class="nav navbar-nav navbar-right ml-auto">			
                 <li class="nav-item">

@@ -151,6 +151,15 @@ nav {
 .navbar .dropdown-menu.form-wrapper a:hover{
   text-decoration: underline;
 }
+.dropdown-user {
+  width: 169px !important;
+  background: #fff !important;
+  text-align: center;
+  font-size:  17px !important;
+}
+.dropdown-user a {
+  color: #333 !important;
+}
 .navbar .form-wrapper .hint-text {
   text-align: center;
   margin-bottom: 15px;
@@ -1421,8 +1430,21 @@ footer {
   color: #33cabb;	
 }
 /*----- contact-form ----*/
-.contact-form {
-  margin-top:  60px;
+#contact-form {
+  width: 50%;
+  margin: 80px auto 0 auto;
+}
+/** About **/
+#about {
+  margin: 80px 0;
+}
+#about .about-title {
+  text-transform: capitalize;
+  text-align: center
+}
+#about p{
+  color: #888;
+  line-height: 1.6;
 }
 
 
