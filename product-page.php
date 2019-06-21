@@ -129,7 +129,11 @@ include('init.php');
           <!-- Product Pricing -->
           <div class="product-price">
             <span><?php echo $pro['price'];?>$</span>
-            <a href="#" class="cart-btn">Add to cart</a>
+            <form  action="cart.php" method="POST">
+                <input type="number" name="quantity" value="1"  placeholder="Quantity" required>
+                <input type="hidden" name="product_id" value="<?=$pro['id']?>">
+                <input class="cart-btn" type="submit" value="Add To Cart">
+            </form>
           </div>
           </div>
       

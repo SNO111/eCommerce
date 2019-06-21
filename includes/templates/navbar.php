@@ -69,7 +69,14 @@
                         </li>
                 </ul>
             <?php } else { ?>
-            <ul class="nav navbar-nav navbar-right ml-auto">			
+            <ul class="nav navbar-nav navbar-right ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link dropdown-toggle" href="cart.php">
+                         <i class="fa fa-shopping-cart"></i>
+                    </a>
+    
+                   
+                </li>			
                 <li class="nav-item">
                     <a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#">Login</a>
                     <ul class="dropdown-menu form-wrapper">					

@@ -33,8 +33,8 @@
              $formErrors[] = 'Passwords do no match';
          }
          foreach ($formErrors as $error) {
-             $msgStatus = '<div class="alert-error">' . $error . '</div>';
-             reDirecthome($msgStatus,'back', 10);
+             $msgStatus = '<div class="alert alert-danger">' . $error . '</div>';
+             reDirecthome($msgStatus,'back');
          }
 
          
