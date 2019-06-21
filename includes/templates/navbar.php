@@ -1,5 +1,5 @@
 <?php 
-  
+   $password = '';
     //Check if the user coming from HTTP Request 
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
         $username   = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
@@ -60,7 +60,7 @@
                             <a data-toggle="dropdown" class="btn dropdown-toggle get-started-btn mt-1 mb-1" href="#"><?php echo $_SESSION['user'];?> </a>
                             <ul class="dropdown-menu form-wrapper dropdown-user">					
                                 <li>
-                                   <a  href="profile.php?">Profile</a>
+                                   <a  href="profile.php">Profile</a>
                                 </li>
                                 <li>
                                     <a href="logout.php">Logout</a>

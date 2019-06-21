@@ -408,7 +408,7 @@
                 echo '<h1 class="heading">Delete!</h1>';
                 echo '<div class="container">';
 
-                // Check if th eGet Request itemid is numeric & get the integer value of if
+                // Check if th eGet Request userid is numeric & get the integer value of if
                 $userid = isset($_GET['userid']) & is_numeric($_GET['userid']) ? $_GET['userid'] : 0;
 
                 $stmt = $db->prepare("SELECT * FROM users WHERE id = ?");

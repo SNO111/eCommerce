@@ -55,11 +55,12 @@
                     // Echo success message
                     if ($stmtCount) {
                         echo '<div class="sign-up-msg text-center">';
-                        echo '<div class="alert-success">You have Sign Up successfully</div>';
-                        echo '<br/>'
-                        $msgStatus = '<div class="alert-info">You can Login now freely</div>';
-                         reDirecthome($msgStatus, 200);
+                        echo '<div class="alert alert-success">You have Sign Up successfully</div>';
+                        echo '<br/>';
+                        $msgStatus = '<div class="alert alert-info">You can Login now freely</div>';
+                        reDirecthome($msgStatus);
                          echo '</div>';
+                         
                     } else {
                         echo '<div class="alert-error">Something went wrong!</div>';
                     }
