@@ -44,5 +44,4 @@
 <?php 
     include $tpl . 'footer.php';
 
-
 ?>

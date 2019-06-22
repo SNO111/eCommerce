@@ -1,24 +1,4 @@
-<?php 
-   $password = '';
-    //Check if the user coming from HTTP Request 
-    if($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $username   = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
-        $password   = $_POST['password'];
-        $hashedPass  = sha1($password);
-          
 
-        // Check if the user exsit in database
-        $stmt = $db->prepare("SELECT username, password FROM users WHERE username = ? AND password = ?");
-        $stmt->execute(array($username, $hashedPass));
-        $row   = $stmt->fetch();
-        $count = $stmt->rowCount();
-        // If Count > 0 That mean there is a record about this username
-        if ($count > 0 ) {
-            $_SESSION['user'] = $username; // Register session Name
-            header('Location: index.php'); // Redirect to Dashborad 
-            exit();
-        } 
-    }?>
 <nav class="navbar navbar-default navbar-expand-lg navbar-light navbar-fixed-top">
     <div class="container">
         <div class="navbar-header d-flex col">
@@ -67,6 +47,11 @@
                                 </li>
                             </ul>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link dropdown-toggle" href="cart.php">
+                                <i class="fa fa-shopping-cart"></i>
+                            </a>
+                        </li>	
                 </ul>
             <?php } else { ?>
             <ul class="nav navbar-nav navbar-right ml-auto">
@@ -74,8 +59,6 @@
                     <a class="nav-link dropdown-toggle" href="cart.php">
                          <i class="fa fa-shopping-cart"></i>
                     </a>
-    
-                   
                 </li>			
                 <li class="nav-item">
                     <a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#">Login</a>

@@ -15,7 +15,7 @@
     //Check if the user coming from HTTP Request 
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
         $username   = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
-        $password   = filter_var($_POST['password'], );
+        $password   = $_POST['password'];
         $hashedPass = sha1($password);
 
 
