@@ -90,10 +90,10 @@ include('init.php');
           </div>
 
           <!-- Product Configuration -->
-          <div class="product-configuration">
+         <!-- <div class="product-configuration"> -->
 
             <!-- Product Color -->
-            <div class="product-color">
+          <!--  <div class="product-color">
               <span>Color</span>
 
               <div class="color-choose">
@@ -111,9 +111,10 @@ include('init.php');
                 </div>
               </div>
             </div>
+            -->
 
             <!-- Cable Configuration -->
-            <div class="cable-config">
+          <!--  <div class="cable-config">
               <span>Cable configuration</span>
 
               <div class="cable-choose">
@@ -125,7 +126,7 @@ include('init.php');
               <a href="#">How to configurate your headphones</a>
             </div>
           </div>
-
+          -->
           <!-- Product Pricing -->
           <div class="product-price">
             <span><?php echo $pro['price'];?>$</span>

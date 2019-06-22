@@ -25,7 +25,7 @@ include('init.php'); ?>
             <div class="slider-content">
             <h4>New Product</h4>
             <h2>Denim Longline T-Shirt Dress With Split</h2>
-            <button type="button" class="buy-now-btn" name="button">$130</button>
+            <!-- <button type="button" class="buy-now-btn" name="button">$130</button> -->
             </div>
             <div class="number-pagination">
             <span>1</span>
@@ -38,7 +38,6 @@ include('init.php'); ?>
             <div class="slider-content">
             <h4>New Product</h4>
             <h2>Denim Longline T-Shirt Dress With Split</h2>
-            <button type="button" class="buy-now-btn" name="button">$130</button>
             </div>
             <div class="number-pagination">
             <span>2</span>
@@ -51,7 +50,6 @@ include('init.php'); ?>
             <div class="slider-content">
             <h4>New Product</h4>
             <h2>Denim Longline T-Shirt Dress With Split</h2>
-            <button type="button" class="buy-now-btn" name="button">$130</button>
             </div>
             <div class="number-pagination">
             <span>3</span>
@@ -64,7 +62,6 @@ include('init.php'); ?>
             <div class="slider-content">
             <h4>New Product</h4>
             <h2>Denim Longline T-Shirt Dress With Split</h2>
-            <button type="button" class="buy-now-btn" name="button">$130</button>
             </div>
             <div class="number-pagination">
             <span>4</span>
@@ -83,7 +80,7 @@ include('init.php'); ?>
     <div class="container-fluid">
         <div class="row">
             <?php 
-                $limit =  6;
+                $limit =  8;
                 $stmt = $db->prepare("SELECT * FROM items  WHERE `name` LIKE '%outfit%' ORDER BY id DESC LIMIT 8");
                 $stmt->execute();
                 $allItems = $stmt->fetchAll();
@@ -114,7 +111,32 @@ include('init.php'); ?>
     </div>
 
     <!-- End ADs -->
-
+    <div class="container-fluid">
+        <div class="row">
+            <?php 
+                $limiting =  14;
+                $stmt = $db->prepare("SELECT * FROM items  WHERE `description` LIKE '%Lorem%' ORDER BY id DESC LIMIT  $limiting");
+                $stmt->execute();
+                $allItems = $stmt->fetchAll();
+                foreach ($allItems as $item) {
+               
+            ?>
+                <div class="col-md-3 col-sm-8">
+                    <div class="product-item text-center">
+                        <div class="p-item-img">
+                            <img class="img-fluid" src="dashoborad/uploaded/images/<?php echo $item['item_image'];?>" alt="">
+                        </div>
+                        <hr>
+                        <div class="p-item-info">
+                            <h4 class="p-title"><?php echo $item['name']; ?></h4>
+                            <p class="p-price"><span>$</span><?php echo $item['price'];?></p>
+                        </div>
+                        <a href="product-page.php?pageid=<?php echo $item['id']; ?>&pagename=<?php echo $item['name']; ?>" class="check-it">BUY NOW</a>
+                     </div>
+                </div>
+             <?php } ?>
+        </div>
+    </div>
 
     <div class="container-fluid">
         <div class="row">

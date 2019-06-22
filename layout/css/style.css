@@ -929,7 +929,10 @@ opacity:1;
   color: #870c03;
   margin-right: 20px;
 }
+.product-price input[type="number"] {
+  width: 120px;
 
+}
 .cart-btn {
   display: inline-block;
   background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);

@@ -114,7 +114,7 @@ include('init.php');
                     </div>
                 </div>
                 <div class="col-md-12">
-                    <input type="submit" class="btn btn-success btn-send" value="Send message">
+                    <input type="submit" class="btn btn-info btn-send" value="Send message">
                 </div>
             </div>
             <br>
