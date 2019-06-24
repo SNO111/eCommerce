@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="<?php echo $css; ?>font-awesome.min.css">
     <link rel="stylesheet" href="<?php echo $css; ?>css_slider.css">
     <link rel="stylesheet" href="<?php echo $css; ?>style.css">
+
    
 </head>
 <body>

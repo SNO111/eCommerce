@@ -27,12 +27,14 @@
                 <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
                 <li class="nav-item"><a href="about.php" class="nav-link">About</a></li>	
             </ul>
-            <form class="navbar-form form-inline">
-                <div class="input-group search-box">								
-                    <input type="text" id="search" class="form-control" placeholder="Search here...">
-                    <span class="input-group-addon"><i class="fa fa-search">&#xE8B6;</i></span>
-                </div>
-            </form>
+            <form method="POST" class="navbar-form navbar-left" action="search.php">
+          <div class="input-group">
+              <input type="text" class="form-control" id="navbar-search-input" name="keyword" placeholder="Search for Product" required>
+              <span class="input-group-btn" id="searchBtn" style="display:none;">
+                  <button type="submit" class="btn btn-default btn-flat"><i class="fa fa-search"></i> </button>
+              </span>
+          </div>
+        </form>
             
             <?php if(isset($_SESSION['user'])) { ?>
                     <ul class="nav navbar-nav navbar-right ml-auto">			

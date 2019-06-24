@@ -140,16 +140,22 @@ function updateQuantity(quantityInput)
   });  
 }
 
+$('#search').keyup(function() {
+    $('#show_result').show();
+    var text = $(this).val();
+      $.ajax({
+        type: 'GET',
+        url: 'search.php',
+        data: 'txt=' + text,
+        success: function(data) {
+          $('#show_result').html(data);
 
-/* Remove item from cart */
-function removeItem(removeButton)
-{
-  /* Remove row from DOM and recalc cart total */
-  var productRow = $(removeButton).parent().parent();
-  productRow.slideUp(fadeTime, function() {
-    productRow.remove();
-    recalculateCart();
-  });
-}
+        }
+
+      });
+})
+
+
 
 });
+
